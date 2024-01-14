@@ -1,7 +1,6 @@
 using System;
 
-namespace or202
-{
+
     class Program
     {
         public static void Main(string[] args)
@@ -40,5 +39,5 @@ namespace or202
             Console.ReadKey(true);
         }
     }
-}
+
 
