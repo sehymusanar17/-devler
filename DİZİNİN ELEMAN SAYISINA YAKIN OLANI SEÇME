@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Örnek__YAŞAR__2011__220_
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.Write("Dizinin Eleman Sayısını Giriniz: ");
+            int n = Int32.Parse(Console.ReadLine());
+
+            int[] B = new int[n];
+
+            Console.WriteLine("Dizinin Elemanlarını Giriniz:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{i + 1}. Elemanı Giriniz: ");
+                B[i] = Int32.Parse(Console.ReadLine());
+            }
+
+            int e = 1;
+            for (int a = 2; a < B.Length; a++)
+            {
+                if (Math.Abs(B[0] - B[a]) < Math.Abs(B[0] - B[e]))
+                {
+                    e = a;
+                }
+            }
+
+            Console.WriteLine("İlk Sayıya En Yakın Sayı = " + B[e]);
+
+            Console.Write("devam etmek için bir tuşa basın . . . ");
+            Console.ReadKey(true);
+        }
+    }
+}
