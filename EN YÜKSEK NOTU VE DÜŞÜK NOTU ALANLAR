@@ -1,7 +1,6 @@
 using System;
 
-namespace not
-{
+
     class Program
     {
         public static void Main(string[] args)
@@ -51,4 +50,4 @@ namespace not
             Console.ReadKey(true);
         }
     }
-}
+
