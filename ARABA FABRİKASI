@@ -1,7 +1,6 @@
 using System;
 
-namespace EnYuksekAdetliArabalar
-{
+
     class Program
     {
         static void Main(string[] args)
@@ -65,4 +64,4 @@ namespace EnYuksekAdetliArabalar
             Console.ReadKey(true);
         }
     }
-}
+
