@@ -1,0 +1,73 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Otopark Çıkış Ücreti Hesaplama");
+
+        Console.Write("Araç Türü (Otomobil/Kamyon/İş Makinası): ");
+        string aracTuru = Console.ReadLine().ToLower();
+
+        Console.Write("Kalış Süresi (saat): ");
+        if (!int.TryParse(Console.ReadLine(), out int kalisSuresi))
+        {
+            Console.WriteLine("Geçersiz saat girişi.");
+            return;
+        }
+
+        double cikisUcreti = HesaplaCikisUcreti(aracTuru, kalisSuresi);
+
+        if (cikisUcreti == -1)
+        {
+            Console.WriteLine("Geçersiz araç türü.");
+        }
+        else
+        {
+            Console.WriteLine($"Çıkış Ücreti: {cikisUcreti} TL");
+        }
+    }
+
+    static double HesaplaCikisUcreti(string aracTuru, int kalisSuresi)
+    {
+        double toplamUcret = 0;
+
+        switch (aracTuru)
+        {
+            case "otomobil":
+                toplamUcret = HesaplaUcret(5, 2, 10, 8, 10, kalisSuresi);
+                break;
+
+            case "kamyon":
+                toplamUcret = HesaplaUcret(8, 2, 8, 2, 10, kalisSuresi);
+                break;
+
+            case "iş makinası":
+                toplamUcret = HesaplaUcret(12, 2, 8, 3, 10, kalisSuresi);
+                break;
+
+            default:
+                return -1; // Geçersiz araç türü
+        }
+
+        return toplamUcret;
+    }
+
+    static double HesaplaUcret(double ilkSaatUcret, int saatSiniri, int sonrakiSaatUcret, int ekUcretSaat, int gunlukUcret, int kalisSuresi)
+    {
+        double toplamUcret = 0;
+
+        if (kalisSuresi <= saatSiniri)
+        {
+            toplamUcret = ilkSaatUcret;
+        }
+        else
+        {
+            toplamUcret = ilkSaatUcret + ((kalisSuresi - saatSiniri) / ekUcretSaat) * sonrakiSaatUcret;
+
+            toplamUcret += (kalisSuresi / 24) * gunlukUcret;
+        }
+
+        return toplamUcret;
+    }
+}
