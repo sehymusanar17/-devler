@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Örnek__YAŞAR__2011__220_
-{
     class Program
     {
         public static void Main(string[] args)
@@ -37,4 +34,4 @@ namespace Örnek__YAŞAR__2011__220_
             Console.ReadKey(true);
         }
     }
-}
+
