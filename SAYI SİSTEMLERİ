@@ -1,0 +1,50 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ikili (Binary) sayi girin: ");
+        string ikiliGiris = Console.ReadLine();
+
+        
+        if (IsBinary(ikiliGiris))
+        {
+            int ikiliDeger = Convert.ToInt32(ikiliGiris);
+            int onluDeger = 0;
+            int tabanDeger = 1;
+
+            while (ikiliDeger > 0)
+            {
+                int basamakDeger = ikiliDeger % 10;
+                onluDeger = onluDeger + basamakDeger * tabanDeger;
+                ikiliDeger = ikiliDeger / 10;
+                tabanDeger = tabanDeger * 2;
+            }
+
+            Console.WriteLine($"Ikili (Binary) Sayi: {ikiliGiris}");
+            Console.WriteLine($"Onlu (Decimal) Sayi: {onluDeger}");
+        }
+        else
+        {
+            Console.WriteLine("Geçersiz ikili (Binary) girişi.");
+        }
+
+        Console.ReadLine();
+    }
+
+
+    static bool IsBinary(string str)
+    {
+        foreach (char c in str)
+        {
+            if (c != '0' && c != '1')
+            {
+                return false;
+            }
+        }
+        return true;
+        Console.ReadLine();
+
+    }
+}
