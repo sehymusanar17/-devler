@@ -1,0 +1,54 @@
+using System;
+
+namespace not
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int EnBuyuk = -1500, EnKucuk = 1500;
+            int[] B = { 56, 78, 95, 23, 95, 87, 61, 77, 45, 33 };
+            string[] A = { "Emin", "Emir", "İclal", "Bekir", "Cem", "Arda", "Kaan", "Metin", "Can", "Ramiz" };
+
+            for (int c = 0; c < B.Length; c++)
+            {
+                if (B[c] >= EnBuyuk)
+                {
+                    if (B[c] > EnBuyuk)
+                    {
+                        EnBuyuk = B[c];
+                    }
+                }
+
+                if (B[c] <= EnKucuk)
+                {
+                    if (B[c] < EnKucuk)
+                    {
+                        EnKucuk = B[c];
+                    }
+                }
+            }
+
+            Console.WriteLine("En Yüksek Notu Alan Kişiler:");
+            for (int i = 0; i < B.Length; i++)
+            {
+                if (B[i] == EnBuyuk)
+                {
+                    Console.WriteLine(A[i]);
+                }
+            }
+
+            Console.WriteLine("\nEn Düşük Notu Alan Kişiler:");
+            for (int i = 0; i < B.Length; i++)
+            {
+                if (B[i] == EnKucuk)
+                {
+                    Console.WriteLine(A[i]);
+                }
+            }
+
+            Console.Write("DEVAM ETMEK İÇİN TIKLAYIN . . . ");
+            Console.ReadKey(true);
+        }
+    }
+}
