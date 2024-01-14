@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sayıcevirme
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int a;
+            string s = " ";
+            string[] Birler = { "Bir", "İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz" };
+            string[] Onlar = { "On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+
+            Console.Write("Bir Sayı Giriniz (1-999 arasında): ");
+            a = Int32.Parse(Console.ReadLine());
+
+            if (a >= 1 && a <= 999)
+            {
+                if (a / 100 > 0)
+                {
+                    s = Birler[a / 100 - 1] + " Yüz";
+                    a %= 100;
+
+                    if (a > 0)
+                    {
+                        s += " ";
+                    }
+                }
+
+                if (a / 10 > 0)
+                {
+                    s += Onlar[a / 10 - 1];
+                    a %= 10;
+
+                    if (a > 0)
+                    {
+                        s += " ";
+                    }
+                }
+
+                if (a > 0)
+                {
+                    s += Birler[a - 1];
+                }
+
+                Console.WriteLine(s);
+            }
+            else
+            {
+                Console.WriteLine("Uygun değer girmediniz.");
+            }
+
+            Console.Write("Press any key to continue . . . ");
+            Console.ReadKey(true);
+        }
+    }
+}
