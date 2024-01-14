@@ -1,0 +1,32 @@
+using System;
+
+
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string s, ys = "";
+            int a;
+            byte c;
+            Console.Write("Bir cümle giriniz:");
+            s = Console.ReadLine();
+
+            for (a = 0; a < s.Length; a++)
+            {
+                c = (byte)s[a];
+
+                
+                if (c >= 65 && c <= 90) 
+                {
+                    c = (byte)(c + 32);
+                }
+
+                ys = ys + (char)c;
+            }
+
+            Console.WriteLine(ys);
+            Console.WriteLine("\n\nDEVAM ETMEK İÇİN TIKLAYIN . . . ");
+            Console.ReadKey(true);
+        }
+    }
+
