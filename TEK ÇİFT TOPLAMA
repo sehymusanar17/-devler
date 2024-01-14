@@ -1,0 +1,29 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Bir sayı girin:");
+
+       
+        Console.Write("Sayı: ");
+        int sayi = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("TEK'leri mi ÇİFT'leri mi toplamak istersiniz?");
+        Console.Write("Lütfen 'TEK' veya 'ÇİFT' yazın: ");
+        string secim = Console.ReadLine().ToUpper(); 
+
+        
+        int toplam = 0;
+        for (int i = 1; i <= sayi; i++)
+        {
+            if ((secim == "TEK" && i % 2 != 0) || (secim == "ÇİFT" && i % 2 == 0))
+            {
+                toplam += i;
+            }
+        }
+
+        Console.WriteLine($"1 ile {sayi} arasındaki {secim} tamsayıların toplamı: {toplam}");
+        Console.ReadLine();
+    }
+}
