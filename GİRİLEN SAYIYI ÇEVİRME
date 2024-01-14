@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sayıcevirme
-{
     class Program
     {
         public static void Main(string[] args)
@@ -58,4 +56,4 @@ namespace Sayıcevirme
             Console.ReadKey(true);
         }
     }
-}
+
