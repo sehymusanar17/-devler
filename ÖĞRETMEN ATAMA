@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace öğretmenler
-{
+
+
     class Program
     {
         public static void Main(string[] args)
@@ -41,5 +41,4 @@ namespace öğretmenler
             Console.Write("devam etmek için tıklayın . . . ");
             Console.ReadKey(true);
         }
-    }
-}
+    }}
