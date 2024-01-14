@@ -1,0 +1,35 @@
+using System;
+
+namespace or096
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            double[] a = { 150, 600, 700, 450, 850, 275, 950, 1500, 210, 368 };
+            int b = 0;
+
+        basla:
+            if (b <= 9)
+            {
+                if (a[b] >= 500)
+                {
+                    Console.WriteLine(a[b]);
+                    b++;
+                    goto basla;
+                }
+
+                a[b] = (a[b] * 0.1) + a[b];
+                a[b] = a[b] + 50;
+                Console.WriteLine(a[b]);
+
+                b++;
+                goto basla;
+            }
+
+            Console.Write("DEVAM ETMEK İÇİN BİR TUŞA BASINIZ. . . ");
+            Console.ReadKey(true);
+        }
+    }
+}
+
