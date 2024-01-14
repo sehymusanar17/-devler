@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Bir isim girin: ");
+        string girilenIsim = Console.ReadLine();
+
+        char[] isim = girilenIsim.ToCharArray();
+        bool[] D = new bool[isim.Length];
+        Random rastgele = new Random();
+
+        Console.Write("Karıştırılmış isim: ");
+
+        for (int a = 0; a < isim.Length; a++)
+        {
+            int sayi;
+            do
+            {
+                sayi = rastgele.Next(isim.Length);
+            } while (D[sayi]);
+
+            D[sayi] = true;
+            Console.Write(isim[sayi]);
+        }
+
+        Console.Write("\n\n\nDEVAM ETMEK İÇİN TIKLAYIN. . . ");
+        Console.ReadKey(true);
+    }
+}
