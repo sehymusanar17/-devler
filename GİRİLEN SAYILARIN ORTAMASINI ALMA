@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Kaç adet sayı girmek istiyorsunuz? ");
+        int adet = Convert.ToInt32(Console.ReadLine());
+
+        if (adet <= 0)
+        {
+            Console.WriteLine("Geçerli bir pozitif sayı giriniz.");
+            return;
+        }
+
+        int toplam = 0;
+
+        for (int i = 1; i <= adet; i++)
+        {
+            Console.Write($"Sayı #{i}: ");
+            int sayi = Convert.ToInt32(Console.ReadLine());
+            toplam += sayi;
+        }
+
+        double ortalama = (double)toplam / adet;
+
+        Console.WriteLine($"Girilen {adet} sayının toplamı: {toplam}");
+        Console.WriteLine($"Girilen {adet} sayının ortalaması: {ortalama}");
+
+        Console.ReadLine();
+    }
+}
